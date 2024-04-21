@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
+import controller.Controller;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -19,6 +16,7 @@ public class JanelaProcuraUsuario extends javax.swing.JFrame {
      */
     public JanelaProcuraUsuario() {
         initComponents();
+        Controller control = control;
     }
 
     public JButton getBtUserSearch() {
@@ -76,6 +74,11 @@ public class JanelaProcuraUsuario extends javax.swing.JFrame {
         lbUserSearch.setText("Procurar usuário por CPF");
 
         btUserSearch.setText("Exibir");
+        btUserSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUserSearchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,6 +115,16 @@ public class JanelaProcuraUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btUserSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUserSearchActionPerformed
+        control.teste();
+        String usuario = control.controlProcuraUsuario();
+        if(usuario.equals("0")){
+        System.out.println("nao tem nada");
+        } else{
+            System.out.println(usuario);
+        }      
+    }//GEN-LAST:event_btUserSearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -146,7 +159,7 @@ public class JanelaProcuraUsuario extends javax.swing.JFrame {
             }
         });
     }
-
+    private Controller control;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btUserSearch;
     private javax.swing.JLabel lbUserSearch;

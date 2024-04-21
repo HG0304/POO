@@ -170,6 +170,7 @@ public class JanelaCadastro extends javax.swing.JFrame {
         rbtMasculino = new javax.swing.JRadioButton();
         rbtFeminino = new javax.swing.JRadioButton();
         lbIcon = new javax.swing.JLabel();
+        btCadastra = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -203,14 +204,23 @@ public class JanelaCadastro extends javax.swing.JFrame {
         lbIcon.setMinimumSize(new java.awt.Dimension(150, 150));
         lbIcon.setPreferredSize(new java.awt.Dimension(553, 512));
 
-        jMenu1.setText("Usaário");
+        btCadastra.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btCadastra.setText("Cadastrar");
+        btCadastra.setMargin(new java.awt.Insets(2, 5, 3, 5));
+        btCadastra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCadastraActionPerformed(evt);
+            }
+        });
+
+        jMenu1.setText("Usuário");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu1ActionPerformed(evt);
             }
         });
 
-        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.setText("Procurar usuário");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -245,7 +255,8 @@ public class JanelaCadastro extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rbtFeminino)
-                            .addComponent(rbtMasculino))
+                            .addComponent(rbtMasculino)
+                            .addComponent(btCadastra, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lbIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(52, 52, 52))))
@@ -274,7 +285,9 @@ public class JanelaCadastro extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(rbtMasculino)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbtFeminino))
+                        .addComponent(rbtFeminino)
+                        .addGap(41, 41, 41)
+                        .addComponent(btCadastra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lbIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -290,6 +303,11 @@ public class JanelaCadastro extends javax.swing.JFrame {
         JanelaProcuraUsuario jpu = new JanelaProcuraUsuario();
         jpu.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void btCadastraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastraActionPerformed
+        control.controlCadastro();
+        control.teste();
+    }//GEN-LAST:event_btCadastraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -329,6 +347,7 @@ public class JanelaCadastro extends javax.swing.JFrame {
     
     private Controller control;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCadastra;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
