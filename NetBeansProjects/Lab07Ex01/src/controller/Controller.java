@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import model.GerenciadorDeUsuarios;
 import model.Usuario;
 import view.JanelaCadastro;
 import view.JanelaProcuraUsuario;
@@ -8,16 +9,23 @@ import view.JanelaProcuraUsuario;
 public class Controller {
     private JanelaCadastro jc;
     private JanelaProcuraUsuario jpu;
+    private ArrayList <Usuario> usuarios;
 
-    public Controller(JanelaCadastro jc) {
-        this.jc = jc;
+    // private static Controller instancia; // instancia unica
+    // private ArrayList<Usuario> usuarios = new ArrayList<>();
+
+    public Controller(GerenciadorDeUsuarios usuarios, JanelaCadastro jc) {
+    this.jc = jc;
     }
 
-    public Controller(JanelaProcuraUsuario jpu) {
-        this.jpu = jpu;
-    }
+//    public static Controller getInstance() {
+//      if (instancia == null) {
+//        instancia = new Controller();
+//      }
+//      return instancia;
+//    }
     
-    ArrayList <Usuario> usuarios = new ArrayList <> ();
+    // GerenciadorDeUsuarios usuarios = new GerenciadorDeUsuarios();
     
     public void controlCadastro(){
         String nome = jc.getTxtNome().getText();
@@ -27,18 +35,17 @@ public class Controller {
         Boolean genero = jc.getRbtFeminino().isSelected();
         
         Usuario usuario = new Usuario(nome, sobrenome, idade, CPF, genero);
+        // usuarios.addUsuario(usuario);
         usuarios.add(usuario);
-        System.out.println("usuarios.size(): " + usuarios.size());
-    }
-    
-    public void teste(){
+        // System.out.println("usuarios.size(): " + usuarios.sizeUsuario());
         System.out.println("usuarios.size(): " + usuarios.size());
     }
     
     public String controlProcuraUsuario(){
         String CPF = jpu.getTxtUserSearch().getText();
+        // System.out.println("usuarios.size(): " + usuarios.sizeUsuario());
         System.out.println("usuarios.size(): " + usuarios.size());
-        // System.out.println(usuarios.get(0).getCPF());
+        System.out.println(usuarios.get(0).getCPF());
         for(int i = 0; i < usuarios.size(); i++){
             if(CPF.equalsIgnoreCase(usuarios.get(i).getCPF())){
                 
@@ -46,6 +53,15 @@ public class Controller {
             }
         }
         return "0";
-        
+    }
+    
+    public void controlPrintUsuario(){
+        String usuario = controlProcuraUsuario();
+        if(usuario.equals("0")){
+            jpu.getTxtExibirPesquisa().setText("Usuario não encontrado");
+            System.out.println("nao tem nada");
+        } else{
+            jpu.getTxtExibirPesquisa().setText(usuario);
+        }    
     }
 }

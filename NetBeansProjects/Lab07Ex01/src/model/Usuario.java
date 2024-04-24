@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Usuario {
     private String nome, sobrenome, idade, CPF, genero;
 
@@ -7,8 +9,6 @@ public class Usuario {
         return CPF;
     }
     
-    
-
     public Usuario(String nome, String sobrenome, String idade, String CPF, boolean genero) {
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -23,7 +23,7 @@ public class Usuario {
         }
     }
     
-    
+
     
     @Override
     public String toString() {

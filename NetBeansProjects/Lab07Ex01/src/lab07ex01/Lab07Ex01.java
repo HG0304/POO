@@ -1,16 +1,20 @@
 package lab07ex01;
+import controller.Controller;
+import java.util.ArrayList;
+import model.GerenciadorDeUsuarios;
+import model.Usuario;
 import view.JanelaCadastro;
-import view.JanelaProcuraUsuario;
 
 public class Lab07Ex01 {
-
-    /**
-     * @param args the command line arguments
-     */
+    private static JanelaCadastro jc;
+    private static Controller controller;
     public static void main(String[] args) {
-        JanelaCadastro jc = new JanelaCadastro();
-        
+        // ArrayList<Usuario> usuarios = new ArrayList<>();
+        GerenciadorDeUsuarios usuarios = new GerenciadorDeUsuarios();
+        JanelaCadastro jc = new JanelaCadastro(controller); // Create JanelaCadastro first
+        Controller controller = new Controller(usuarios, jc); // Pass jc to Controller constructor
         jc.setVisible(true);
-    }
+}
+
     
 }
