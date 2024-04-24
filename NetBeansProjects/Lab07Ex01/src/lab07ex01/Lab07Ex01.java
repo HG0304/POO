@@ -15,6 +15,4 @@ public class Lab07Ex01 {
         Controller controller = new Controller(usuarios, jc); // Pass jc to Controller constructor
         jc.setVisible(true);
 }
-
-    
 }
