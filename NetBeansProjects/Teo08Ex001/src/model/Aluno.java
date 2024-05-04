@@ -14,7 +14,7 @@ public class Aluno {
     public Aluno() {
     }
 
-    public Aluno(String nome, String senha, String usuario) {
+    public Aluno(String nome, String usuario, String senha) {
         this.nome = nome;
         this.senha = senha;
         this.usuario = usuario;

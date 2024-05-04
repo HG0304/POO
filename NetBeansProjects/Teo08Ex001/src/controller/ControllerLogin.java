@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import view.UsuarioFrame;
 
 public class ControllerLogin {
     private LoginFrame view;
@@ -17,7 +18,7 @@ public class ControllerLogin {
     }
     
     public void loginAluno(){
-        Aluno aluno = new Aluno(null, view.getTxtNome().getText(),
+        Aluno aluno = new Aluno(null, view.getTxtUsuario().getText(),
                                       view.getTxtSenha().getText());
         Conexao conexao = new Conexao();
         try{
@@ -26,7 +27,13 @@ public class ControllerLogin {
             ResultSet res = dao.consultar(aluno);
             
             if(res.next()){
-                JOptionPane.showMessageDialog(view, "Login feito!");
+                JOptionPane.showMessageDialog(view, "Login feito!", "Aviso!", JOptionPane.INFORMATION_MESSAGE);
+                String nome = res.getString("nome");
+                String usuario = res.getString("usuario");
+                String senha = res.getString("senha");
+                UsuarioFrame viewUsuario = new UsuarioFrame(new Aluno(nome, usuario, senha));
+                viewUsuario.setVisible(true);
+                view.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(view, "Login nao efetuado");
             }

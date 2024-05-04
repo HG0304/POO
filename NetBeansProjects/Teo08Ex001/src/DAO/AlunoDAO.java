@@ -25,14 +25,14 @@ public class AlunoDAO {
 //                      + "' and senha = '"
 //                      + aluno.getSenha() + "'";
 
-        String sql = "select * from usuario where login ? and senha ?";
-        
+        String sql = "select * from aluno where usuario = ? and senha = ?";
         
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, aluno.getUsuario());
         statement.setString(2, aluno.getSenha());
         statement.execute();
         ResultSet resultado = statement.getResultSet();
+        conn.close();
         return resultado;
     }
 }

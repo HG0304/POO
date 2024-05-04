@@ -49,12 +49,12 @@ public class LoginFrame extends javax.swing.JFrame {
         this.lblSenha = lblSenha;
     }
 
-    public JTextField getTxtNome() {
-        return txtNome;
+    public JTextField getTxtUsuario() {
+        return txtUsuario;
     }
 
     public void setTxtNome(JTextField txtNome) {
-        this.txtNome = txtNome;
+        this.txtUsuario = txtNome;
     }
 
     public JTextField getTxtSenha() {
@@ -79,7 +79,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         lblNome = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
         lblSenha = new javax.swing.JLabel();
         txtSenha = new javax.swing.JTextField();
         btLogin = new javax.swing.JButton();
@@ -112,7 +112,7 @@ public class LoginFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblNome)
                         .addGap(18, 18, 18)
-                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(57, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -124,7 +124,7 @@ public class LoginFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -181,7 +181,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JButton btLogin;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblSenha;
-    private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtSenha;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
